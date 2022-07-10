@@ -1,12 +1,13 @@
-import Pattern.User;
-
 public class App {
 
     public static void main(String args[]){
-        User robert = new User("Robert");
-        User john = new User("John");
-
-        robert.sendMessage("Hi! John!");
-        john.sendMessage("Hello! Robert!");
+        IATCMediator atcMediator = new ATCMediator();
+        Flight sparrow101 = new Flight(atcMediator);
+        Runway mainRunway = new Runway(atcMediator);
+        atcMediator.registerFlight(sparrow101);
+        atcMediator.registerRunway(mainRunway);
+        sparrow101.getReady();
+        mainRunway.land();
+        sparrow101.land();
     }
 }

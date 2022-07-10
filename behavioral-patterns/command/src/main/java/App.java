@@ -1,20 +1,20 @@
-import Pattern.Broker;
-import Pattern.BuyStock;
-import Pattern.SellStock;
-import Pattern.Stock;
+import Pattern.*;
 
 public class App {
 
-    public static void main(String args[]){
-        Stock abcStock = new Stock();
+    public static void main(String args[]) {
+        SimpleRemoteControl remote = new SimpleRemoteControl();
+        Light light = new Light();
+        Stereo stereo = new Stereo();
 
-        BuyStock buyStockOrder = new BuyStock(abcStock);
-        SellStock sellStockOrder = new SellStock(abcStock);
+        // we can change command dynamically
+        remote.setCommand(new LightOnCommand(light));
+        remote.buttonWasPressed();
 
-        Broker broker = new Broker();
-        broker.takeOrder(buyStockOrder);
-        broker.takeOrder(sellStockOrder);
+        remote.setCommand(new StereoOnWithCDCommand(stereo));
+        remote.buttonWasPressed();
 
-        broker.placeOrders();
+        remote.setCommand(new StereoOffCommand(stereo));
+        remote.buttonWasPressed();
     }
 }

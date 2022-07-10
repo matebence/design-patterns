@@ -1,15 +1,14 @@
-import Pattern.Cricket;
-import Pattern.Football;
-import Pattern.Game;
+import Pattern.NetOrder;
+import Pattern.OrderProcessTemplate;
+import Pattern.StoreOrder;
 
 public class App {
 
     public static void main(String args[]){
-
-        Game game = new Cricket();
-        game.play();
+        OrderProcessTemplate netOrder = new NetOrder();
+        netOrder.processOrder(true);
         System.out.println();
-        game = new Football();
-        game.play();
+        OrderProcessTemplate storeOrder = new StoreOrder();
+        storeOrder.processOrder(true);
     }
 }

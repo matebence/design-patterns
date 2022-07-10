@@ -1,29 +1,14 @@
-import Pattern.AbstractLogger;
-import Pattern.ConsoleLogger;
-import Pattern.ErrorLogger;
-import Pattern.FileLogger;
+import Pattern.Chain;
+import Pattern.Number;
 
 public class App {
 
-    private static AbstractLogger getChainOfLoggers(){
-
-        AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
-        AbstractLogger fileLogger = new FileLogger(AbstractLogger.DEBUG);
-        AbstractLogger consoleLogger = new ConsoleLogger(AbstractLogger.INFO);
-
-        errorLogger.setNextLogger(fileLogger);
-        fileLogger.setNextLogger(consoleLogger);
-
-        return errorLogger;
-    }
-
     public static void main(String[] args) {
-        AbstractLogger loggerChain = getChainOfLoggers();
+        Chain chain = new Chain();
 
-        loggerChain.logMessage(AbstractLogger.INFO, "This is an information.");
-
-        loggerChain.logMessage(AbstractLogger.DEBUG, "This is an debug level information.");
-
-        loggerChain.logMessage(AbstractLogger.ERROR, "This is an error information.");
+        chain.process(new Number(90));
+        chain.process(new Number(-50));
+        chain.process(new Number(0));
+        chain.process(new Number(91));
     }
 }

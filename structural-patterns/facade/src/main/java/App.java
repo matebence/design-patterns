@@ -1,12 +1,15 @@
-import Pattern.ShapeMaker;
+import Pattern.HotelKeeper;
+import Pattern.NonVegMenu;
+import Pattern.VegMenu;
+import Pattern.Both;
 
 public class App {
 
     public static void main(String[] args) {
-        ShapeMaker shapeMaker = new ShapeMaker();
+        HotelKeeper keeper = new HotelKeeper();
 
-        shapeMaker.drawCircle();
-        shapeMaker.drawRectangle();
-        shapeMaker.drawSquare();
+        VegMenu v = keeper.getVegMenu();
+        NonVegMenu nv = keeper.getNonVegMenu();
+        Both both = keeper.getVegNonMenu();
     }
 }
