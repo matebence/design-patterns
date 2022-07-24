@@ -236,3 +236,22 @@
 
 	- Composite entity
 		> Composite Entity pattern is used in EJB persistence mechanism. A Composite entity is an EJB entity bean which represents a graph of objects. When a composite entity is updated, internally dependent objects beans get updated automatically as being managed by EJB entity bean. Following are the participants in Composite Entity Bean.
+
+
+**Design Principle #1**
+- Identify the aspects of your code that vary and separate them from what stays the same
+
+**Design priciple #2**
+- Program to an interface not an implementation
+
+**Design principle #3**
+- Favor compostion over inheritance (prefer is-a relationshop over has-a)
+
+**Design principle #4**
+- Strive loosely coupled desigs between object that interact
+
+**Design principle #5**
+- Classses shoud be open for extension closed for modification
+
+**Design principle #6**
+- A class should have only one reason to change
