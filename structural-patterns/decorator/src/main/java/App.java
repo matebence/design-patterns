@@ -1,23 +1,16 @@
-import Pattern.Circle;
-import Pattern.Rectangle;
-import Pattern.RedShapeDecorator;
-import Pattern.Shape;
+import Pattern.BasicCar;
+import Pattern.Car;
+import Pattern.LuxuryCar;
+import Pattern.SportsCar;
 
 public class App {
 
     public static void main(String args[]){
-        Shape circle = new Circle();
+        Car sportsCar = new SportsCar(new BasicCar());
+        sportsCar.assemble();
+        System.out.println("\n*****");
 
-        Shape redCircle = new RedShapeDecorator(new Circle());
-
-        Shape redRectangle = new RedShapeDecorator(new Rectangle());
-        System.out.println("Circle with normal border");
-        circle.draw();
-
-        System.out.println("\nCircle of red border");
-        redCircle.draw();
-
-        System.out.println("\nRectangle of red border");
-        redRectangle.draw();
+        Car sportsLuxuryCar = new SportsCar(new LuxuryCar(new BasicCar()));
+        sportsLuxuryCar.assemble();
     }
 }
