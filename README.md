@@ -245,7 +245,7 @@
 - Program to an interface not an implementation
 
 **Design principle #3**
-- Favor compostion over inheritance (prefer is-a relationshop over has-a)
+- Favor compostion over inheritance (prefer has-a relationshop over is-a)
 
 **Design principle #4**
 - Strive loosely coupled desigs between object that interact
